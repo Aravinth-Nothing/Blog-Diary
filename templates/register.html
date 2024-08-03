@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"><title>Aravinth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <link rel="icon" href="static/My-Logo-transparent.png">
+    <script>
+      window.addEventListener('unload', function() {
+          window.location.reload();
+      });
+  </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div id="notAvailable">
+      <h1>Not available for mobiles yet, <br>Try using on PC</h1>
+    </div>
+    <div id="small-cursor"></div>
+    <div id="big-cursor"></div>
+      <nav id="navbar">
+        <div class="navbar-container">
+          <div class="logo-container">
+            <a href="https://www.aravinth.live"><img src="{{url_for('static',filename='My-Logo-transparent.png')}}" alt="My-Logo" class="navbar-logo"></a>
+            <h1 class="navbar-heading">Blog</h1>
+          </div>
+          <div class="navbar-menu">
+            <button id="menuButton">
+              <div class="small-line"></div>
+              <div class="small-line"></div>
+              <div class="small-line"></div>
+            </button>
+            <div id="menuOverlay">
+              <div id="menuContent">
+                <ul class="menu-links">
+                  <li class="menu-link"><a href="https://aravinth.live" >Home</a></li>
+                </ul>
+              </div>
+            </div> 
+          </div>
+          <ul class="navbar-links">
+            <li><a href="https://aravinth.live" onmouseover="handleHover(1)" onmouseout="handleHover(0)">Portfolio</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+      </div>  
+      <div class="face login"  id="face" style="padding-top: 150px;">
+        <div class="internal-login">
+        <div class="login-logo" id="register-logo"></div>
+        <form action="/register" method="POST">
+            <input type="text" id="username" name="username" placeholder="Username" required class="login-field"><br><br>
+            <input type="password" id="password" name="password" placeholder="Password" required class="login-field"><br><br>
+            <input type="password" id="password" name="confirm_password" placeholder="Confirm Password" required class="login-field"><br><br>
+            <input type="submit" value="Register" class="login-button">
+        </form>
+        <br>
+        {% if error %}
+            <p class="face-head-font" style="font-size:1rem; margin: 0px 0px 2px 0px; color: rgb(255, 90, 90);">{{ error }}</p>
+        {% endif %}
+        <p class="to-register-text face-head-font">Already a User? <a href="/" style="color: white;">Login</a></p>
+      </div>
+    </div>
+      <section id="now-section">
+        <div class="now">
+          <h3 class="now-text">
+            <a class="end-mail" href="mailto:aravinth.nothing@gmail.com">
+              aravinth.nothing@gmail.com
+            </a><br>
+            @25.June.2023
+          </h3>
+        </div>
+      </section>
+    </div>
+    <script src="{{url_for('static',filename='script.js')}}"></script>
+  </body>  
+</html>
+
+
+
+
+
+
+
